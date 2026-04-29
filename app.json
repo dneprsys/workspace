@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "CNC Мониторинг Pro",
+    "slug": "cnc-monitoring-pro-mobile",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#121212"
+    },
+    "android": {
+      "package": "com.cncmonitoringpro.mobile",
+      "permissions": [
+        "NOTIFICATIONS",
+        "VIBRATE",
+        "INTERNET"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#121212"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.cncmonitoringpro.mobile",
+      "supportsTablet": false
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
