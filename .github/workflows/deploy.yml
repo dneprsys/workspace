@@ -27,18 +27,7 @@ jobs:
       - name: Build web (Expo)
         run: npx expo-cli build:web --no-interactive
 
-      - name: Deploy to Netlify
-        if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
-        uses: nwtgck/actions-netlify@v2
-        with:
-          publish-dir: web-build
-          production-deploy: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
       - name: Deploy to GitHub Pages
-        if: ${{ secrets.NETLIFY_AUTH_TOKEN == '' || secrets.NETLIFY_SITE_ID == '' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
