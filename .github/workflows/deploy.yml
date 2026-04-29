@@ -28,7 +28,7 @@ jobs:
         run: npx expo-cli build:web --no-interactive
 
       - name: Deploy to Netlify
-        if: secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != ''
+        if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
         uses: nwtgck/actions-netlify@v2
         with:
           publish-dir: web-build
